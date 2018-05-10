@@ -1,0 +1,33 @@
+<!--
+#############################################################################################
+# File:         membersAll.html
+# Description:  Displays the team members to edit/delete
+# Created by:   Ron Robertson
+# Copyright:    Copyright 2017 Ron Robertson all rights reserved.
+#############################################################################################
+-->
+
+<div class='section' id='admin'>
+    <ul id='adminNav'>
+        <li><a href='/admin/project'>Projects</a></li>
+    </ul>
+    <h1>Admin - Members </h1>
+    <a href='/admin/member/create' class='createBtn'>New</a>
+    
+    <div class='content'>
+        <div ng-repeat="member in members" class='editContainer'>
+            <div class='team_box'>
+               <div class='team_portrait'><img src='assets/images/{{member.screenshot}}' /></div>
+                <div class='team_name'>{{member.nameFirst}} {{member.nameLast}}</div>
+                <div class='team_title'>{{member.title}}</div>
+                <div class='team_email'><a href='mailto:{{member.email}}'>{{member.email}}</a></div>
+            </div><!--END team_box-->
+            <div class='interactions'>
+                <a class='editBtn' type='submit' ng-href="/admin/member/{{ member._id }}">Edit</a>
+                <a class='deleteBtn' href='' type='submit' ng-click="deleteMember(member._id)">Delete</a>
+            </div>
+        </div>
+    </div>   
+</div>
+
+

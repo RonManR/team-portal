@@ -1,0 +1,35 @@
+<!--
+#############################################################################################
+# File:         projectsAll.html
+# Description:  Displays the projects to edit/delete
+# Created by:   Ron Robertson
+# Copyright:    Copyright 2017 Ron Robertson all rights reserved.
+#############################################################################################
+-->
+
+<div class='section' id='admin'>
+    <ul id='adminNav'>
+        <li><a href='/admin/member'>Members</a></li>
+    </ul>
+    <h1>Admin - Projects </h1>
+    <a href='/admin/project/create' class='createBtn'>New</a>
+    
+    <div class='content'>
+        <div ng-repeat="project in projects" class='editContainer'>
+            <a  class='project_box' href='{{project.name}}' target='_blank'>
+                <div class='project_screenshot'><img src='assets/images/{{project.screenshot}}' /></div>
+
+                <div class='project_name'>{{project.name}}</div>
+                <div class='project_description'>{{project.description}}</div>
+            </a><!--END project_box--><br>
+            <div class='interactions'>
+                <a class='editBtn' type='submit' ng-href="/admin/project/{{ project._id }}">Edit</a>
+                <a class='deleteBtn' href='' type='submit' ng-click="deleteProject(project._id)">Delete</a>
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+
+

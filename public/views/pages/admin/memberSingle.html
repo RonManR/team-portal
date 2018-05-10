@@ -1,0 +1,40 @@
+<!--
+#############################################################################################
+# File:         membersAll.html
+# Description:  Displays the team members to edit/delete
+# Created by:   Ron Robertson
+# Copyright:    Copyright 2017 Ron Robertson all rights reserved.
+#############################################################################################
+-->
+
+<div class='section' id='memberSingle'>
+    <ul id='adminNav'>
+        <li><a href='/admin/project'>Projects</a></li>
+        <li><a href='/admin/member'>Members</a></li>
+    </ul>
+    <h1>Admin - Members<br> </h1>
+    <form>
+        <label>First Name</label>
+        <input type="text" id="memberNameFirst" ng-model="formData.nameFirst">
+        <br>
+        <label>Last Name</label>
+        <input type="text" id="memberNameLast" ng-model="formData.nameLast">
+        <br>
+        <label>Title</label>
+        <input type="text" id="memberTitle" ng-model="formData.title">
+        <br>
+        <label>Email</label>
+        <input type="text" id="memberEmail" ng-model="formData.email">
+        <br>
+        <label>Screenshot<br>(56X72)</label>
+        <input class='readonly' type='text' ng-model="formData.screenshot" readonly='readonly'>
+        <input id='memberScreenshot' type = "file" file-model = "myFile" ng-model="formData.screenshot"  custom-on-change="uploadFile" />
+        <br>
+        <br>
+        <button type="submit" ng-if="editMode == 'new'" ng-click="createMember()">Add</button>
+        <button type="submit" ng-if="editMode == 'update'" ng-click="updateMember(formdData.member._id)">Update</button>
+        <div class="userMessage">{{ message }}</div>
+    </form>
+</div>
+
+

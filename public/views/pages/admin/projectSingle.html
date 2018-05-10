@@ -1,0 +1,37 @@
+<!--
+#############################################################################################
+# File:         projectsAll.html
+# Description:  Displays the projects to edit/delete
+# Created by:   Ron Robertson
+# Copyright:    Copyright 2017 Ron Robertson all rights reserved.
+#############################################################################################
+-->
+
+<div class='section' id='projectSingle'>
+    <ul id='adminNav'>
+        <li><a href='/admin/project'>Projects</a></li>
+        <li><a href='/admin/member'>Members</a></li>
+    </ul>
+    <h1>Admin - Project<br> </h1>
+    <form>
+        <label>Name</label>
+        <input type="text" id="projectName" ng-model="formData.name">
+        <br>
+        <label>Description</label>
+        <input type="text" id="projectDescription" ng-model="formData.description">
+        <br>
+        <label>URL</label>
+        <input type="text" id="projectURL" ng-model="formData.projectURL">
+        <br>
+        <label>Screenshot<br>(116X72)</label>
+        <input class='readonly' type='text' ng-model="formData.screenshot" readonly='readonly'>
+        <input id='projectScreenshot' type = "file" file-model = "myFile" ng-model="formData.screenshot"  custom-on-change="uploadFile" />
+        <br>
+        <br>
+        <button type="submit" ng-if="editMode == 'new'" ng-click="createProject()">Add</button>
+        <button type="submit" ng-if="editMode == 'update'" ng-click="updateProject(formdData.project._id)">Update</button>
+        <div class="userMessage">{{ message }}</div>
+    </form>
+</div>
+
+

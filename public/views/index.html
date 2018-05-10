@@ -1,0 +1,79 @@
+<!--
+#############################################################################################
+# File:         index.html
+# Description:  main html view
+# Created by:   Ron Robertson
+# Copyright:    Copyright 2017 Ron Robertson all rights reserved.
+#############################################################################################
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+
+    <title>Team Portal</title>
+    
+    <!-- set the base path for angular routing -->
+	<base href="/">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type='text/css' href="assets/styles/style.css">
+
+    <!-- Load javascript libraries -->
+	<script src="assets/libraries/jquery/jquery-3.2.1.min.js"></script>
+	<script src="assets/libraries/angular/angular_1.3.8.min.js"></script>
+	<script src="assets/libraries/angular/angular-route_1.3.8.js"></script>
+    
+    <!-- Load controllers -->
+    <script src="controllers/mainController.js"></script> 
+    <script src="controllers/adminController.js"></script> 
+    <script src="controllers/memberController.js"></script> 
+    
+    <!-- Load services -->
+    <script src="services/projectService.js"></script> 
+    <script src="services/memberService.js"></script> 
+    
+    <!-- Load classes -->
+    <script src="assets/classes/projectBox.js"></script>
+    <script src="assets/classes/teamBox.js"></script>
+    
+    <!-- Angular scripts -->
+    <script src="app.routes.js"></script> <!-- load the site routes -->
+    <script src="app.js"></script> <!-- load our main application -->
+    
+
+</head>
+
+<body class='container' ng-app="sims-mobile-data-portal">
+    
+	<!-- Site Header -->
+    <div id='header'>
+        <a id='siteLogo' href='/'></a>
+    </div><!--END header-->
+
+    <div id='main' ng-view></div>
+    
+    <div id='footer'>
+        <h1 id='about'></h1>
+
+        <div class='footer_box'>
+            <div class='footer_label'>Team</div>
+            <div class='footer_content'>A brief description of the team and what the team does can go here.</div>
+        </div><!--END footer_box-->
+
+        <div class='footer_box'>
+            <div class='footer_label'>Find Us</div>
+            <div class='footer_content'>This would be a good place to let the user know how to contact the team. This could be links to social sites or a contact email address.</div>
+        </div><!--END footer_box-->
+
+        <div class='footer_box'>
+            <div class='footer_label'>Feedback</div>
+            <div class='footer_content'>If you have any questions, concerns, or feedback, please feel free to email the  team at <a href='mailto:mail@team.com'>mail@team.com</a>.</div>
+        </div><!--END footer_box-->
+
+    </div><!--END footer-->
+
+</body>
+</html>

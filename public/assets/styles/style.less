@@ -1,0 +1,365 @@
+
+/* Site Colors */
+@color_main:#2b2a2a; /* Dark gray */
+@site_green:#007800; /* site Green */
+@site_blue:#279ed9; /* site Blue */
+
+/* Site Type */
+@font_main:Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+
+
+/* Site Dimensions */
+@content_width:800px;
+
+html,body{
+    padding:0px;
+    margin:0px;
+
+    font-family:@font_main;
+}
+html{
+  background: url(../images/bg_blur.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1,h2,h3,h4,h5{
+    padding:0px;
+    margin:0px;
+    clear:both;
+}
+
+#main{
+    position:relative;
+    width:@content_width;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+
+    
+    h1{
+       
+        margin-bottom:20px;
+    }
+}
+#request_link{
+    position:absolute;
+    top:20px;
+    right:30px;
+    display:block;
+    width:147px;
+    height:23px;
+    background: url(../images/request_blue.png) no-repeat;
+    
+    &:hover{
+        background: url(../images/request_green.png) no-repeat;
+    }
+}
+.section{
+    clear:both;
+    overflow:auto;
+     background-color:rgba(255,255,255,0.58);
+    padding:22px 0px 22px 42px;
+}
+#section_team{
+    min-height:100%;
+    padding-bottom:44px;
+}
+#section_projects{
+    padding-top:44px;
+}
+
+.editContainer{
+    float:left;
+    position:relative;
+    overflow:auto;
+    margin-bottom:20px;
+}
+
+#adminNav{
+    position:absolute;
+    top:0px;
+    right:60px;
+    list-style-type:none;
+    
+    li{
+        float:left;
+        margin-right:5px;
+        padding-left:5px;
+        border-left:1px solid @color_main;
+        
+        &:first-child{
+            border-left:0px;
+        }
+    }
+    
+    a{
+        text-decoration:none;
+        color:@color_main;
+        
+        &:hover{
+            color:@site_blue;
+        }
+    }
+
+}
+.project_box{
+    text-decoration:none;
+    display:block;
+    position:relative;
+    float:left;
+    width:300px;
+    margin-right:64px;
+    overflow:visible;
+    color:@color_main;
+    
+
+    
+    .new_badge{
+        position:absolute;
+        top:-8px;
+        width:41px;
+        height:17px;
+        background: url(../images/badge_new.png) no-repeat;
+    }
+
+    .project_screenshot{
+        float:left;
+        width:116px;
+        height:72px;
+        border:2px solid @site_blue;
+        margin-right:10px;
+        margin-bottom:10px;
+        
+        img{
+            width:116px;
+            height:72px;
+        }
+    }
+    &:hover .project_name{
+        color:@site_blue;
+    }
+    .project_name{
+       color:@site_green;
+        font-weight:bold;
+        margin-bottom:5px;
+    }
+    
+    .project_description{
+        font-size:9pt;  
+    }
+}
+
+.team_box{
+   float:left;
+    width:220px;
+    margin-right:24px;
+    overflow:auto;
+
+    .team_portrait{
+        float:left;
+        width:56px;
+        height:72px;
+        border:2px solid @site_blue;
+        margin-right:10px;
+        margin-bottom:10px;
+    }
+    
+    .team_name{
+       color:@color_main;
+        font-weight:bold;
+        margin-bottom:5px;
+    }
+    
+    .team_title{
+        font-size:9pt;  
+    }
+    .team_email{
+        font-size:9pt;  
+        
+        a{
+            color:@site_blue;
+            text-decoration:none;
+        }
+    }
+}
+
+
+
+
+h1#projects{
+    height:45px;
+    min-width:151px;
+    background-image:url(../images/heading_projects.png);
+    background-repeat:no-repeat;
+}
+h1#team{
+    height:45px;
+    min-width:116px;
+    background-image:url(../images/heading_team.png);
+    background-repeat:no-repeat;
+}
+h1#about{
+    height:45px;
+    min-width:125px;
+    background-image:url(../images/heading_about.png);
+    background-repeat:no-repeat;
+}
+
+.content{
+    margin-top:28px;
+}
+#header{
+    width:@content_width;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    height:80px;
+    background-color:@color_main;
+    z-index:400;
+    
+    #siteLogo{
+        position:absolute;
+        top:-13px;
+        left:25px;
+        width:306px;
+        height:115px;
+        display:block;
+        background-image:url(../images/site_logo.png);
+        background-repeat:no-repeat;   
+    }
+    
+    #nav{
+        position:absolute;
+        right:0px;
+        margin:0px;
+        padding:0px;
+        top:20px;
+        
+        
+        li{
+            list-style:none;
+            text-align:right;
+            margin-right:25px;
+        
+            a{
+                font-size:9pt;
+                color:#aaabad;
+                text-decoration:none;
+                
+                &:hover{
+                    color:@site_blue;
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    position:relative;
+    box-sizing:border-box;
+    height:172px;
+    background-color:@color_main;
+    width:@content_width;
+    margin-left:auto;
+    margin-right:auto;
+    padding:42px 0px 42px 42px;
+    color:#e5ebf1;
+    
+    h1{
+        position:absolute;
+        top:-15px;
+        
+    }
+}
+.footer_box{
+    float:left;
+    width:220px;
+    margin-right:24px;
+    font-size:9pt;
+    
+    .footer_label{
+        color:@site_blue;
+        font-size:14pt;
+        margin-bottom:10px;
+    }
+    
+    a{
+        color:@site_green;
+        text-decoration:none;
+        
+        &:hover{
+            color:@site_blue;
+        }
+    }
+}
+
+table.clean{
+    
+    width:98%;
+   
+    border-collapse:collapse;
+    tr{
+        margin-bottom:5px;
+    }
+    th{
+        text-align:left;
+    }
+    td{
+         box-sizing:border-box;
+        background-color:rgba(255,255,255,0.58);
+        border:1px solid @color_main;
+        padding:2px 5px 2px 5px;
+    }
+}
+#projectSingle,
+#memberSingle{
+    
+    padding-bottom:40px;
+    
+    .userMessage{
+        padding-left:110px;
+    }
+    
+    label{
+        display:inline-block;
+        width:100px;
+        margin-top:5px;
+    }
+}
+.editBtn,
+.deleteBtn,
+.createBtn{
+    clear:left;
+    display:inline-block;
+    box-sizing:border-box;
+    text-decoration:none;
+    color:@color_main;
+    background-color:#e6e7e8;
+    padding:5px 10px 5px 10px;
+    text-align:center;
+    vertical-align:middle;
+    border:1px solid @color_main;
+    font-size:9pt;
+    
+    
+    &:hover{
+        color:#ffffff;
+        background-color:@color_main;
+    }
+}
+.createBtn{
+    font-size:14pt;
+    padding:10px 15px 10px 15px;
+    
+}
+.readonly{
+    background-color:#cccecd;
+}
+.interactions{
+    clear:both;
+}
